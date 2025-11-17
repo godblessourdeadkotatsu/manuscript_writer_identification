@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{stile} % Required for inserting images
 
-\title{notes on manuscript handwritten recognition}
+\title{Notes on manuscript handwriting recognition}
 \author{Lorenzo Sala}
 \date{\today}
 
@@ -13,9 +13,12 @@
 Caratteristiche:
 \begin{itemize}
     \item Transfer learning da ResNet50
+    \item data augmentation: trasformazioni affini
     \item Scongelato layer 2, 3, 4, 5
-    \item Durata training: $\pm$ 4 ore
+    \item Durata training: $\approx$ 4 ore
+    \item Uso esclusivo di immagini grayscale
 \end{itemize}
 Accuratezza ancora da valutare, non sembra in grado di riconoscere sample out of bound
+Problema: forse sto sbagliando a normalizzare i dati. Potrei provare a mettere anche le altre variazioni come canali dei tensori (ResNet chiede immagini RGB quindi ora sto semplicemente triplicando il canale grayscale).
 \end{document}
 
